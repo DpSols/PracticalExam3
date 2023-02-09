@@ -24,6 +24,7 @@ namespace PracticalExam3.Pages
         public ButtonElement DropdownFieldButton => new ButtonElement(DropdownFieldButtonLocator);
         public ButtonElement DropdownListItem => new ButtonElement(DropdownListItemLocator); // just the first of them
         public ButtonElement CheckBoxButton => new ButtonElement(CheckBoxLocator);
+        public ButtonElement NextButton => new ButtonElement(NextButtonLocator);
 
         public string CardNumber => PageIndicator.GetText();
     }
