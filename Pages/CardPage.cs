@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using PracticalExam3.BrowserFactory;
 using PracticalExam3.Elements;
 
 namespace PracticalExam3.Pages
@@ -97,7 +98,10 @@ namespace PracticalExam3.Pages
 
         public void ClickOnNextButton()
         {
+            var currentCardNumber = CardNumber;
             NextButton.Click();
+            BrowserService.Browser
+                .WebDriverWait.Until(_ => !CardNumber.Contains(currentCardNumber));
         }
 
         public string CardNumber => PageIndicator.GetText();

@@ -11,7 +11,7 @@ namespace PracticalExam3.BrowserFactory
         public Browser(WebDriver webDriver)
         {
             WebDriver = webDriver;
-            WebDriverWait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(3));
+            WebDriverWait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(5));
             MaximizeWindow();
             SetImplicitTime();
         }
