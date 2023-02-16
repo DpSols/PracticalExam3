@@ -11,6 +11,11 @@ namespace PracticalExam3.Pages
 
         private By ButtonToNextPageLocator => By.ClassName("start__link");
 
-        public BaseElement ButtonToNextPage => new ButtonElement(ButtonToNextPageLocator);
+        private BaseElement ButtonToNextPage => new ButtonElement(ButtonToNextPageLocator);
+
+        public void GoToNextStep()
+        {
+            ButtonToNextPage.Click();
+        }
     }
 }
