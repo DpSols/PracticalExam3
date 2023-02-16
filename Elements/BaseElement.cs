@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using PracticalExam3.BrowserFactory;
 
 namespace PracticalExam3.Elements
@@ -12,10 +13,8 @@ namespace PracticalExam3.Elements
             Locator = locator;
         }
 
-        private WebDriver WebDriver
-        {
-            get { return BrowserService.Browser.WebDriver; }
-        }
+        private WebDriver WebDriver => BrowserService.Browser.WebDriver;
+        private WebDriverWait WebDriverWait => BrowserService.Browser.WebDriverWait;
 
 
         public void Click()
@@ -33,6 +32,11 @@ namespace PracticalExam3.Elements
             return FindElement().Displayed;
         }
 
+        public void WaitForDisplayed()
+        {
+            WebDriverWait.Until(_ => IsDisplayed());
+        }
+        
         protected IWebElement FindElement()
         {
             return WebDriver.FindElement(Locator);

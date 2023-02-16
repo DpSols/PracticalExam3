@@ -1,14 +1,17 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace PracticalExam3.BrowserFactory
 {
     public class Browser
     {
         public WebDriver WebDriver { get; }
+        public WebDriverWait WebDriverWait { get; }
 
         public Browser(WebDriver webDriver)
         {
             WebDriver = webDriver;
+            WebDriverWait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(5));
             MaximizeWindow();
             SetImplicitTime();
         }
